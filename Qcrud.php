@@ -35,7 +35,7 @@
 
         //============ukuran file kegedean
         //bila ukuran file terlalu besar(lebih dari 1 mb)
-        if($ukuranFile > 1000000)
+        if($ukuranFile > 10000000)
         {
             echo "<script> alert('gambar gede amat'); </script>";
             return false;
@@ -323,6 +323,7 @@
         ('','$nama','$banyak_ruangan','$kota','$alamat')";
 
         mysqli_query($conn, $query_film);
+
         return mysqli_affected_rows($conn);
     }
 
@@ -337,14 +338,19 @@
 
         $query_ruangan= "INSERT INTO ruangan
         VALUES 
-        ('','$bioskop','$nama',$baris','$column')";
+        ('','$bioskop','$nama','$baris','$column')";
 
         mysqli_query($conn, $query_ruangan);
 
-        if(mysqli_affected_rows($conn)){
+        $query_id_ruangan = query("SELECT * FROM ruangan ORDER BY id_ruangan DESC LIMIT 1");
+        $id_ruangan = $query_id_ruangan[0]['id_ruangan'];
+
+        if(mysqli_affected_rows($conn) >= 0){
 
             for($i=1; $i <= $column; $i++){
+
                 switch ($i) {
+
                     case 1:
                         $nama = 'A';
                         break;
@@ -377,17 +383,25 @@
                         $nama = 'H';
                         break;
                 }
+
                 for($j = 1; $j <= $baris; $j++ ){
                     $nama_kursi = $nama . $j;
         
                     $query = "INSERT INTO kursi
                     VALUES 
-                    ('','$bioskop','$nama_kursi','50000','0')"; 
+                    ('','$id_ruangan','$nama_kursi ','50000','0')"; 
         
                     mysqli_query($conn, $query);
+                    if(mysqli_affected_rows($conn) < 0){
+                        echo "error kursi";
+                        die;
+                    }
                 }
                 
             }
+        }else{
+            echo "error";
+            die;
         }
     }
 
@@ -398,14 +412,13 @@
         $bioskop = $data["_bioskop"];
         $ruang = $data["_ruangan"];
         $film = $data["_film"];
-        $kursi = $data["_kursi"];
         $date = $data["_date"];
         $time = $data["_time"];
 
 
         $query_tayang= "INSERT INTO tayang
         VALUES 
-        ('','$bioskop','$ruang','$kursi','$film','$date','$time')";
+        ('','$bioskop','$ruang','$film','$date','$time')";
 
         mysqli_query($conn, $query_tayang);
 

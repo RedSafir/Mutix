@@ -36,11 +36,6 @@
 
         <br><br>
 
-        <label for="_banyak_kursi">Banyak_kursi</label>
-        <input type="text" name="_banyak_kursi" id="_banyak_kursi">
-
-        <br><br>
-
         <label for="_baris">Baris</label>
         <input type="text" name="_baris" id="_baris">
 

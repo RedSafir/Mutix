@@ -44,7 +44,7 @@
     $query_ruangan = query("SELECT * FROM ruangan WHERE id_ruangan = $id_ruangan");
     $baris_ruangan = $query_ruangan[0]['baris'];
     $column_ruangan = $query_ruangan[0]['colom'];
-    $query_kursi = mysqli_query($conn, "SELECT * FROM kursi WHERE id_ruangan = $id_ruangan");
+    $query_kursi = mysqli_query($conn, "SELECT * FROM kursi  WHERE id_ruangan = $id_ruangan");
     $kursi = mysqli_fetch_all($query_kursi);
     $k = 0;
     for($i = 1; $i <= $baris_ruangan; $i++){

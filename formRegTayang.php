@@ -44,15 +44,6 @@
 
         <br><br>
 
-        <label for="_kursi">Nama kursi</label>
-        <select name="_kursi" id="_kursi">
-            <?php foreach($kursi as $kurs) : ?>
-                <option value="<?php echo $kurs['id_kursi'] ?>"><?php echo $kurs['nama_kursi'] ?></option>
-            <?php endforeach ?>
-        </select>
-
-        <br><br>
-
         <label for="_nama">Nama film</label>
         <select name="_film" id="_ruangan">
             <?php foreach($film as $fil) : ?>
