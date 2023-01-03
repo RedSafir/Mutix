@@ -24,6 +24,8 @@
     if(isset($_POST["_submit"]))
     {
 
+
+
         if (ubah_profile($_POST, 'user')) 
         {
             echo "<script> alert('data berhasil di perbaharui');
@@ -48,7 +50,7 @@
     <h1>Update User</h1>
     <form action="" method="POST" enctype="multipart/form-data">
         <!-- data yang nggk perlu di tampilkan -->
-        <input type="hidden" name="_id" id="_id" value="<?php echo $data_ubah[0]["id_staff"] ?>">
+        <input type="hidden" name="_id" id="_id" value="<?php echo $data_ubah[0]["id_user"] ?>">
         <input type="hidden" name="_gambarLama" id="_gambarLama" value="<?php echo $data_ubah[0]["gambar"] ?>">
 
         <label for="_gambar">gambar</label>
@@ -61,10 +63,10 @@
         <input type="text" name="_username" id="_username" value="<?php echo $data_ubah[0]['nama'] ?>">
         <br>
         <label for="_umur">umur</label>
-        <input type="text" name="_umur" id="_umur" value="<?php echo $data_ubah[0]['umur_staff'] ?>">
+        <input type="text" name="_umur" id="_umur" value="<?php echo $data_ubah[0]['umur_user'] ?>">
         <br>
         <label for="_password">password</label>
-        <input type="password" name="_password" id="_password" value="<?php echo $data_ubah[0]['password_staff'] ?>">
+        <input type="password" name="_password" id="_password" value="<?php echo $data_ubah[0]['password_user'] ?>">
         <br>
         <button type="submit" name="_submit">Update</button>
     </form>

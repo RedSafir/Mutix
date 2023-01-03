@@ -265,6 +265,7 @@
             WHERE id = $id";
 
             mysqli_query($conn, $query);
+            
             return true;
         }else{
 

@@ -53,32 +53,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <title>Preview Film</title>
 </head>
 <body>
-    <h1>MUTIX.ID</h1>
-    <a href="homePage.php">Home</a>
-    <a href="hometiketUser.php">Tiket Saya</a>
-    <a href="homeProfile.php">
-    <?php if(!$login) : ?>
-            <a href="formLogin.php">Login</a>
-            <a href="homeProfile.php">
-                <img src="image/NoUser.png" alt="error" width="50" >
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">MUTIX</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="homePage.php">Home</a>
+        <a class="nav-link" href="hometiketUser.php">Tiket Saya</a>
+        <a class="nav-link" href="javascript:history.go(-1)">Kembali</a>
+        <a class="nav-link" href="QLogOut.php">Logout</a>
+        <a class="navbar-brand" href="homeProfile.php">
+        <?php if(!$login) : ?>
+            <a href="formLogin.php" class="nav-link">Login</a>
+                <img src="image/NoUser.png" alt="error" width="30" height="24" class="d-inline-block align-text-top" >
             </a>
         <?php else : ?>
-            <img src="image/<?php echo $profile[0]['gambar'] ?>" alt="error" width="50">
-            <a href="QLogOut.php">LogOut</a>
-        <?php endif; ?>
-    </a>
+            <a href="QLogOut.php" class="nav-link">LogOut</a>
+            <a href="homeProfile.php">
+            <img src="image/<?php echo $profile[0]['gambar'] ?>" alt="error" width="30" height="24" class="d-inline-block align-text-top">
+            </a>        
+            <?php endif; ?>
+      </div>
+    </div>
+  </div>
+</nav>
+    <section class="text-center">
+     <!-- Background image -->
+     <div class="p-5 bg-image" style="
+        background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
+        height: 300px;
+        "></div>
 
-    <br><br>
-            <a href="javascript:history.go(-1)">kembali</a>
-    <br>
+    <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+        margin-top: -100px;
+        background: hsla(0, 0%, 100%, 0.8);
+        backdrop-filter: blur(30px);
+        ">
+    <div class="card-body py-5 px-md-5">
 
-    <h1><?php echo $film[0]['judul_film'] ?></h1>
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+    <h1 class="fw-bold mb-5"><?php echo $film[0]['judul_film'] ?></h1>
     <br>
     <img src="image/<?php echo $film[0]['gambar'] ?>" alt="error" width="250">
-    <h3><?php echo $film[0]['deskripsi'] ?></h3>
-    <a href="homePesan.php?id=<?php echo $film[0]['id_film'] ?>">pesan</a>
+    <h5><?php echo $film[0]['deskripsi'] ?></h5>
+    <a role ="button" class="btn btn-info" href="homePesan.php?id=<?php echo $film[0]['id_film'] ?>">Pesan</a> </button>
+        </section>
 </body>
 </html>
