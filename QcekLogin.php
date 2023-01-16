@@ -1,7 +1,7 @@
 <?php 
     require "Qkoneksi.php";
     session_start();
-
+        $login = false;
     function ceklogin($data){
         global $conn;
 

@@ -188,6 +188,7 @@
     function ubah_profile($data, $aut)
     {
         global $conn;
+        
 
         if($aut == 'admin'){
 
@@ -243,8 +244,9 @@
             return true;
 
         }else if($aut == 'user'){
-
+            
             $id = $data["_id"];
+            
             $Nama =htmlspecialchars($data["_username"]);
             $Email =htmlspecialchars($data["_password"]);
             $gambarLama  =htmlspecialchars($data["_gambarLama"]);
@@ -260,9 +262,9 @@
 
             $query = "UPDATE user SET 
             nama = '$Nama',
-            password_password = '$Email',
+            password_user = '$Email',
             gambar = '$Gambar' 
-            WHERE id = $id";
+            WHERE id_user = $id";
 
             mysqli_query($conn, $query);
             
