@@ -150,13 +150,13 @@ $query_genre = query("SELECT * FROM genre");
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="image-2.jpg" class="d-block w-100" alt="C:\xampp\htdocs\Mutix\image\image-2.jpg" style="height: 200px">
+                        <img src="Poster.png" class="d-block w-100" alt="C:\xampp\htdocs\Mutix\image\image-2.jpg" style="height: 200px">
                     </div>
                     <div class="carousel-item">
-                        <img src="image-3.jpg" class="d-block w-100" alt="C:\xampp\htdocs\Mutix\image\image-2.jpg" style="height: 200px">
+                        <img src="Poster.png" class="d-block w-100" alt="C:\xampp\htdocs\Mutix\image\image-2.jpg" style="height: 200px">
                     </div>
                     <div class="carousel-item">
-                        <img src="image-1.jpg" class="d-block w-100" alt="C:\xampp\htdocs\Mutix\image\image-2.jpg" style="height: 200px">
+                        <img src="Poster.png" class="d-block w-100" alt="C:\xampp\htdocs\Mutix\image\image-2.jpg" style="height: 200px">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -229,17 +229,17 @@ $query_genre = query("SELECT * FROM genre");
             </div>
 
         </div>
-        <div class="img-fluid mb-5  px-5">
+        <div class="img-fluid mt-5  px-5">
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="Poster.png" class="d-block w-100" alt="C:\xampp\htdocs\Mutix\image\image-2.jpg" style="height: 200px">
                     </div>
                     <div class="carousel-item">
-                        <img src="image-3.jpg" class="d-block w-100" alt="C:\xampp\htdocs\Mutix\image\image-2.jpg" style="height: 200px">
+                        <img src="Poster.png" class="d-block w-100" alt="C:\xampp\htdocs\Mutix\image\image-2.jpg" style="height: 200px">
                     </div>
                     <div class="carousel-item">
-                        <img src="image-1.jpg" class="d-block w-100" alt="C:\xampp\htdocs\Mutix\image\image-2.jpg" style="height: 200px">
+                        <img src="Poster.png" class="d-block w-100" alt="C:\xampp\htdocs\Mutix\image\image-2.jpg" style="height: 200px">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -254,44 +254,7 @@ $query_genre = query("SELECT * FROM genre");
         </div>
     </main>
 
-    <div class="p-5 bg-image" style="
-        background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
-        height: 300px;
-        "></div>
-
-    <div class="card mx-4 mx-md-5 shadow-5-strong" style="
-        margin-top: -100px;
-        background: hsla(0, 0%, 100%, 0.8);
-        backdrop-filter: blur(30px);
-        ">
-        <div class="card-body py-5 px-md-5">
-
-            <div class="row d-flex justify-content-center">
-                <div class="col-lg-8">
-                    <div class="container-sm">
-
-                        <table>
-                            <?php foreach ($query_genre as $genre) : ?>
-                                <tr>
-                                    <td>
-                                        <h1 class="fw-bold mb-5"><?php echo $genre['nama_genre'] ?></h1>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <?php $genre = $genre['id_genre'] ?>
-                                        <?php $query_film = query("SELECT * FROM film WHERE genre = $genre") ?>
-                                        <?php foreach ($query_film as $film) : ?>
-                                            <a href="homePreview.php?id=<?php echo $film['id_film'] ?>">
-                                                <img src="image/<?php echo $film['gambar'] ?>" alt="error" height="100">
-                                                <h2><?php echo $film['judul_film'] ?></h2>
-                                            </a>
-                                        <?php endforeach ?>
-                                    </td>
-                                </tr>
-                            <?php endforeach ?>
-                        </table>
-                        </section>
+   
 
 </body>
 

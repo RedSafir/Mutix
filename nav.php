@@ -43,7 +43,7 @@ if(isset($login)){
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">MUTIX</a>
+    <a class="navbar-brand" href="#"><img src="WhatsApp_Image_2023-01-16_at_22.59.41-removebg-preview.png" alt="" width="100"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
